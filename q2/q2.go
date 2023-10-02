@@ -12,6 +12,21 @@ package q2
 //
 //Ajude os amigos a encontrar o número de problemas para os quais eles escreverão uma solução.
 
-func ProblemsSolved(answers [][3]bool) int {
-	return 0
+func ProblemsSolved(respostas [][3]bool) int {
+	var pr int
+
+	for i := 0; i < len(respostas); i++ {
+		amgcrtz := 0
+
+		for j := 0; j < 3; j++ {
+			if respostas[i][j] {
+				amgcrtz++
+			}
+		}
+		if amgcrtz >= 2 {
+			pr++
+		}
+	}
+
+	return pr
 }
